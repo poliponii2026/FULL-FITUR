@@ -30,8 +30,6 @@ linear-gradient(90deg,#cfcfcf 1px, transparent 1px);
 background-size:40px 40px;
 }
 
-/* NOISE */
-
 body::before{
 content:'';
 position:absolute;
@@ -42,8 +40,6 @@ opacity:.12;
 pointer-events:none;
 }
 
-/* FLOAT */
-
 .float{
 position:absolute;
 font-size:90px;
@@ -53,40 +49,15 @@ animation:float 7s ease-in-out infinite;
 pointer-events:none;
 }
 
-.f1{
-top:5%;
-left:5%;
-color:#00d9ff;
-}
-
-.f2{
-right:8%;
-top:15%;
-color:#ff5a1f;
-}
-
-.f3{
-bottom:8%;
-left:10%;
-color:#00d63b;
-}
-
-.f4{
-bottom:10%;
-right:12%;
-color:#ffe600;
-}
+.f1{ top:5%; left:5%; color:#00d9ff; }
+.f2{ right:8%; top:15%; color:#ff5a1f; }
+.f3{ bottom:8%; left:10%; color:#00d63b; }
+.f4{ bottom:10%; right:12%; color:#ffe600; }
 
 @keyframes float{
-0%,100%{
-transform:translateY(0px) rotate(0deg);
+0%,100%{ transform:translateY(0px) rotate(0deg); }
+50%{ transform:translateY(-25px) rotate(8deg); }
 }
-50%{
-transform:translateY(-25px) rotate(8deg);
-}
-}
-
-/* SCREEN FLASH */
 
 .flash{
 position:absolute;
@@ -99,15 +70,9 @@ animation:flash 8s infinite;
 }
 
 @keyframes flash{
-0%,97%,100%{
-opacity:0;
+0%,97%,100%{ opacity:0; }
+98%{ opacity:.06; }
 }
-98%{
-opacity:.06;
-}
-}
-
-/* MAIN */
 
 .main{
 position:relative;
@@ -126,13 +91,12 @@ from{
 opacity:0;
 transform:translateY(80px) scale(.9);
 }
+
 to{
 opacity:1;
 transform:translateY(0) scale(1);
 }
 }
-
-/* TOP */
 
 .top{
 display:flex;
@@ -166,23 +130,15 @@ animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-0%,100%{
-transform:scale(1);
+0%,100%{ transform:scale(1); }
+50%{ transform:scale(1.04); }
 }
-50%{
-transform:scale(1.04);
-}
-}
-
-/* CONTENT */
 
 .content{
 padding:28px;
 position:relative;
 overflow:hidden;
 }
-
-/* SCAN LINE */
 
 .scan{
 position:absolute;
@@ -199,15 +155,9 @@ pointer-events:none;
 }
 
 @keyframes scan{
-0%{
-top:-100%;
+0%{ top:-100%; }
+100%{ top:120%; }
 }
-100%{
-top:120%;
-}
-}
-
-/* LINEUP */
 
 .lineup{
 background:#00d9ff;
@@ -223,18 +173,10 @@ animation:wiggle 3s infinite;
 }
 
 @keyframes wiggle{
-0%,100%{
-transform:rotate(0deg);
+0%,100%{ transform:rotate(0deg); }
+25%{ transform:rotate(-.5deg); }
+75%{ transform:rotate(.5deg); }
 }
-25%{
-transform:rotate(-.5deg);
-}
-75%{
-transform:rotate(.5deg);
-}
-}
-
-/* TITLE */
 
 .title{
 background:#ffe600;
@@ -263,8 +205,6 @@ font-size:1rem;
 border:3px solid #000;
 }
 
-/* DESC */
-
 .desc{
 text-align:center;
 font-size:1rem;
@@ -272,8 +212,6 @@ line-height:1.8;
 font-weight:600;
 margin-bottom:25px;
 }
-
-/* ALERT */
 
 .alert{
 background:#ff5a1f;
@@ -289,15 +227,9 @@ animation:blink 1s infinite;
 }
 
 @keyframes blink{
-0%,100%{
-opacity:1;
+0%,100%{ opacity:1; }
+50%{ opacity:.55; }
 }
-50%{
-opacity:.55;
-}
-}
-
-/* LIVE */
 
 .live{
 display:flex;
@@ -317,15 +249,9 @@ animation:live 1s infinite;
 }
 
 @keyframes live{
-0%,100%{
-opacity:1;
+0%,100%{ opacity:1; }
+50%{ opacity:.2; }
 }
-50%{
-opacity:.2;
-}
-}
-
-/* QUEUE */
 
 .queue{
 background:#00d63b;
@@ -367,20 +293,14 @@ animation:numberPulse 1s infinite alternate;
 }
 
 @keyframes numberPulse{
-from{
-transform:scale(1);
-}
-to{
-transform:scale(1.04);
-}
+from{ transform:scale(1); }
+to{ transform:scale(1.04); }
 }
 
 .queue p{
 margin-top:12px;
 font-weight:700;
 }
-
-/* TIME */
 
 .time{
 background:#fff;
@@ -405,8 +325,6 @@ text-shadow:3px 3px 0 #000;
 margin-bottom:20px;
 }
 
-/* PROGRESS */
-
 .progressWrap{
 width:100%;
 height:30px;
@@ -415,11 +333,12 @@ background:#ddd;
 overflow:hidden;
 }
 
+/* LOADING 4 JAM */
 .progress{
 height:100%;
 width:0%;
 background:linear-gradient(90deg,#ff5a1f,#ffe600,#00d63b);
-animation:loading 300s linear forwards;
+animation:loading 14400s linear forwards;
 position:relative;
 }
 
@@ -436,21 +355,13 @@ animation:shine 1.2s infinite;
 }
 
 @keyframes shine{
-100%{
-left:140%;
-}
+100%{ left:140%; }
 }
 
 @keyframes loading{
-from{
-width:0%;
+from{ width:0%; }
+to{ width:100%; }
 }
-to{
-width:100%;
-}
-}
-
-/* WARNING */
 
 .ticketLeft{
 margin-top:18px;
@@ -471,8 +382,6 @@ transform:scale(1.03);
 }
 }
 
-/* FEED */
-
 .feed{
 background:#111;
 border:5px solid #000;
@@ -486,8 +395,6 @@ align-items:center;
 text-align:center;
 margin-bottom:25px;
 }
-
-/* STATS */
 
 .stats{
 display:grid;
@@ -519,8 +426,6 @@ font-size:.85rem;
 font-weight:700;
 margin-top:5px;
 }
-
-/* BUTTON */
 
 .btn{
 display:block;
@@ -560,8 +465,6 @@ transform:translate(-5px,-5px);
 box-shadow:18px 18px 0 #000;
 }
 
-/* FOOT */
-
 .footer{
 background:#111;
 padding:18px;
@@ -571,37 +474,15 @@ font-weight:700;
 font-size:.9rem;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
 
-.title{
-font-size:2.8rem;
-}
-
-.lineup{
-font-size:1.2rem;
-}
-
-.queueNumber{
-font-size:4.5rem;
-}
-
-.fakeTime{
-font-size:2rem;
-}
-
-.stats{
-grid-template-columns:1fr;
-}
-
-.logo{
-font-size:2rem;
-}
-
-.content{
-padding:18px;
-}
+.title{ font-size:2.8rem; }
+.lineup{ font-size:1.2rem; }
+.queueNumber{ font-size:4.5rem; }
+.fakeTime{ font-size:2rem; }
+.stats{ grid-template-columns:1fr; }
+.logo{ font-size:2rem; }
+.content{ padding:18px; }
 
 }
 
@@ -676,7 +557,7 @@ Antrian dapat berubah sewaktu-waktu karena traffic tinggi
 <h2>ESTIMASI WAKTU ANTRIAN</h2>
 
 <div class="fakeTime" id="fakeTime">
-2 JAM 12 MENIT
+4 JAM 00 MENIT
 </div>
 
 <div class="progressWrap">
@@ -712,8 +593,8 @@ Antrian dapat berubah sewaktu-waktu karena traffic tinggi
 
 </div>
 
-<a href="https://poliponii2026.github.io/Deskripsi-poliponi/" class="btn">
-MASUK KE PEMBELIAN TIKET
+<a href="#" class="btn">
+MOHON MENUNGGU PROSES ANTRIAN
 </a>
 
 </div>
@@ -754,24 +635,26 @@ queue.innerText = current;
 
 const fakeTime = document.getElementById('fakeTime');
 
-const times = [
-
-'2 JAM 12 MENIT',
-'1 JAM 53 MENIT',
-'2 JAM 31 MENIT',
-'1 JAM 44 MENIT',
-'2 JAM 08 MENIT',
-'1 JAM 36 MENIT'
-
-];
+let totalSeconds = 14400; // 4 JAM
 
 setInterval(()=>{
 
-let random = Math.floor(Math.random()*times.length);
+if(totalSeconds > 0){
 
-fakeTime.innerText = times[random];
+totalSeconds--;
 
-},4000);
+let hours = Math.floor(totalSeconds / 3600);
+let minutes = Math.floor((totalSeconds % 3600) / 60);
+let seconds = totalSeconds % 60;
+
+fakeTime.innerText =
+String(hours).padStart(2,'0') + ' JAM ' +
+String(minutes).padStart(2,'0') + ' MENIT ' +
+String(seconds).padStart(2,'0') + ' DETIK';
+
+}
+
+},1000);
 
 /* FEED */
 
@@ -795,7 +678,6 @@ const messages = [
 setInterval(()=>{
 
 let random = Math.floor(Math.random()*messages.length);
-
 feed.innerHTML = messages[random];
 
 },2500);
@@ -807,7 +689,6 @@ function increase(id,min,max){
 setInterval(()=>{
 
 let el = document.getElementById(id);
-
 let val = parseInt(el.innerText);
 
 val += Math.floor(Math.random()*(max-min)+min);
@@ -833,14 +714,13 @@ document.title === 'POLIPONI 2026 • WAITING ROOM'
 
 },1500);
 
-/* AUTO REDIRECT */
+/* AUTO REDIRECT SETELAH 4 JAM */
 
 setTimeout(()=>{
 
-window.location.href =
-'https://poliponii2026.github.io/Deskripsi-poliponi/';
+window.location.href = 'https://poliponii2026.github.io/FULL-FITUR/';
 
-},300000);
+},14400000); // 4 JAM = 14.400.000 ms
 
 </script>
 
